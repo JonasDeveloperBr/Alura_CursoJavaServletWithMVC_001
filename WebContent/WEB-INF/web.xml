@@ -15,6 +15,20 @@
   	<url-pattern>/ola</url-pattern>
   </servlet-mapping>
   
+  <!-- START - Implementação do Filtro direto no webxml - add in 05/02/2021-->
+  <filter>
+  	<filter-name>AF</filter-name>
+  	<filter-class>br.com.alura.gerenciador.servlet.AutorizacaoFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+  	<filter-name>AF</filter-name>
+  	<url-pattern>/entrada</url-pattern>
+  </filter-mapping>
+  <!-- END - Implementação do Filtro -->
+  
+<!-- Sugerido em texto na Aula, mas não apresentado em vídeo -->
+<!-- 
   <login-config>
   	<auth-method>BASIC</auth-method>
   </login-config>
@@ -33,5 +47,6 @@
   		<url-pattern>/entrada</url-pattern>
   	</web-resource-collection>
   </security-constraint>
-  
+ -->
+ 
 </web-app>

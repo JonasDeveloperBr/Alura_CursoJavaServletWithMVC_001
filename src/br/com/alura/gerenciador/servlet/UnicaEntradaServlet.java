@@ -22,16 +22,16 @@ public class UnicaEntradaServlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String paramAcao = request.getParameter("acao");//pega o valor do parâmetro para definir qual ação será executada
-
-		HttpSession sessao = request.getSession();//obtem a session
-		boolean usuarioNaoEstaLogado = (sessao.getAttribute("usuarioLogado") == null);//verifica se a session é uma credencial válida
-		boolean ehUmaAcaoProtegida = !(paramAcao.equals("Login") || paramAcao.equals("LoginForm"));//informa as páginas de acesso livre
-		
-		if(ehUmaAcaoProtegida && usuarioNaoEstaLogado) {
-			response.sendRedirect("redirect:acao=LoginForm");//credencial inválida, entao redireciona a negação para a página de login
-			return;//return para encerrar o processamento da servlet e não tentar executar os demais códigos abaixo
-		}
-		
+//
+//		HttpSession sessao = request.getSession();//obtem a session da requisição
+//		boolean usuarioNaoEstaLogado = (sessao.getAttribute("usuarioLogado") == null);//verifica se a session é uma credencial válida
+//		boolean ehUmaAcaoProtegida = !(paramAcao.equals("Login") || paramAcao.equals("LoginForm"));//informa as páginas de acesso livre
+//		
+//		if(ehUmaAcaoProtegida && usuarioNaoEstaLogado) {
+//			response.sendRedirect("redirect:acao=LoginForm");//credencial inválida, entao redireciona a negação para a página de login
+//			return;//return para encerrar o processamento da servlet e não tentar executar os demais códigos abaixo
+//		}
+//		
 		
 		
 		String nomeDaClasse = "br.com.alura.gerenciador.acao." + paramAcao;
