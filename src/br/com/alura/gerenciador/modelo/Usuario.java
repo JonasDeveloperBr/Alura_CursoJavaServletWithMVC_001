@@ -21,12 +21,14 @@ public class Usuario {
 		this.senha = senha;
 	}
 	
-	public boolean ehIgual(String login, String senha) {
+	public boolean ehIgual(String login, String senha) { //Compara os valores dos parâmetros existentes no request com os existentes na lista do métdo construtor estático da classe Banco
 		if(!this.login.equals(login)) {
+			System.out.println("Not equals login");
 			return false;
 		}
 		
 		if(!this.senha.equals(senha)) {
+			System.out.println("Not equals senha");
 			return false;
 		}
 		
