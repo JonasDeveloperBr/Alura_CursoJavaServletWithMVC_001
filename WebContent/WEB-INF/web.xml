@@ -15,7 +15,19 @@
   	<url-pattern>/ola</url-pattern>
   </servlet-mapping>
   
-  <!-- START - Implementação do Filtro direto no webxml - add in 05/02/2021-->
+  <!-- START - Filtro de Monitoramento - Add Jonas 05/02/2021-->
+  <filter>
+  	<filter-name>MF</filter-name>
+  	<filter-class>br.com.alura.gerenciador.servlet.MonitoramentoFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+  	<filter-name>MF</filter-name>
+  	<url-pattern>/entrada</url-pattern>
+  </filter-mapping>
+  <!-- END - Filtro de Monitoramento -->
+  
+  <!-- START - Filtro de autorização de entrada - Add 05/02/2021-->
   <filter>
   	<filter-name>AF</filter-name>
   	<filter-class>br.com.alura.gerenciador.servlet.AutorizacaoFilter</filter-class>
@@ -26,6 +38,19 @@
   	<url-pattern>/entrada</url-pattern>
   </filter-mapping>
   <!-- END - Implementação do Filtro -->
+  
+  <!-- START - Filtro do Controlador -->
+  <filter>
+  	<filter-name>CF</filter-name>
+  	<filter-class>br.com.alura.gerenciador.servlet.ControladorFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+  	<filter-name>CF</filter-name>
+  	<url-pattern>/entrada</url-pattern>
+  </filter-mapping>
+  <!-- END - Filtro do Controlador -->
+  
   
 <!-- Sugerido em texto na Aula, mas não apresentado em vídeo -->
 <!-- 
